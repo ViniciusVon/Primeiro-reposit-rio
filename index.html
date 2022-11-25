@@ -4,19 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de Email</title>
+    <style>
+        body{
+            background-color: rgb(131, 131, 131) ;
+            margin-top: 80px;
+            margin-left: 800px;
+        }
+        button{
+            margin-block-start: 20px;
+            background-color: rgb(36, 136, 36);
+            border: transparent;
+            border-radius: 5px;
+            height: 40px;
+            width: 150px;
+            color: white;
+            padding: 10px;
+            transition: all .7s ease;
+        }
+        button:hover{
+            background-color: rgb(9, 78, 24);
+
+        }
+        input{
+            margin-block: 10px;
+            height: 20px;
+            width: 250px;
+        }
+        div#res{
+            margin-top: 60px;
+        }
+    </style>
 </head>
 <body>
     <h1>Gerador de emails</h1>
-    <input type="text" name="txt1" id="txt1">
-    <input type="text" name="txt2" id="txt2">
-    <button>Gerar email</button>
-    <div id="res">Email gerado</div>
+    <input type="text" name="txt1" id="txt1"> <br>
+    <input type="text" name="txt2" id="txt2"> <br>
+    <button type="button" value="Gerar" onclick="gerar()">Gerar email</button>
+    <div id="res"><strong>Email gerado</strong></div>
     <script>
         window.alert("Seja bem-vindo à nossa página.")
-        var nome = document.getElementById("txt1")
-        var sobrenome = document.getElementById("txt2")
-        var gerar = nome +"."+ sobrenome + "@gmail.com"
+        function gerar() {
+        var nome = document.getElementById('txt1')
+        var sobrenome = document.getElementById('txt2')
+        var email = String(nome.value+"."+sobrenome.value)
+        res.innerHTML = `O email para a empresa é ${email}@gmail.com`
+        }
     </script>
 </body>
 </html>
